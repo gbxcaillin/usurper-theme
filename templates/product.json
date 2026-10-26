@@ -1,0 +1,55 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "eyebrow": { "type": "text", "settings": { "text": "Made to order · ships in 5–9 days", "text_style": "uppercase" } },
+        "title": { "type": "title", "settings": {} },
+        "price": { "type": "price", "settings": {} },
+        "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "square" } },
+        "quantity_selector": { "type": "quantity_selector", "settings": {} },
+        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": false, "show_gift_card_recipient": false } },
+        "fit_note": { "type": "text", "settings": { "text": "True to size. Pick the size you normally wear, then check the guide below, measured from real samples.", "text_style": "body" } },
+        "description": { "type": "description", "settings": {} },
+        "tab_fit": { "type": "collapsible_tab", "settings": { "heading": "Fit + size guide", "icon": "ruler", "content": "<p>Regular and tall, true to size. The silhouette is relaxed or oversized, but the labelled size stays true to the published block.</p>", "page": "fit-size-guides" } },
+        "tab_made": { "type": "collapsible_tab", "settings": { "heading": "Made to order", "icon": "box", "content": "<p>Every piece is made when you order it. No overproduction, no warehouse of unsold stock. Allow 5–9 business days for production before dispatch.</p>", "page": "made-to-order-faq" } },
+        "tab_ship": { "type": "collapsible_tab", "settings": { "heading": "Shipping + returns", "icon": "truck", "content": "<p>Shipped Australia-wide with tracking. Because each piece is made to order, exchanges are for sizing and manufacturing faults only; see the full policy.</p>", "page": "shipping-returns" } }
+      },
+      "block_order": ["eyebrow", "title", "price", "variant_picker", "quantity_selector", "buy_buttons", "fit_note", "description", "tab_fit", "tab_made", "tab_ship"],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 48,
+        "padding_bottom": 24
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "More from the drop",
+        "heading_size": "h2",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 64,
+        "padding_bottom": 84
+      }
+    }
+  },
+  "order": ["main", "related-products"]
+}

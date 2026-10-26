@@ -1,0 +1,232 @@
+{
+  "sections": {
+    "hero": {
+      "type": "usurper-hero",
+      "blocks": {
+        "shot_1": {
+          "type": "shot",
+          "settings": {
+            "title": "Shot 01 — Attitude frame",
+            "line_1": "Wet alley after dark · front crown embroidery",
+            "line_2": "4:5 · 1600×2000 · low-key directional light"
+          }
+        },
+        "shot_2": {
+          "type": "shot",
+          "settings": {
+            "title": "Shot 02 — Back graphic",
+            "line_1": "Shutters / poster wall · combo logo back print",
+            "line_2": "4:5 · 1600×2000 · restrained gold, deep blacks"
+          }
+        }
+      },
+      "block_order": [
+        "shot_1",
+        "shot_2"
+      ],
+      "settings": {
+        "heading_1": "Heavyweight streetwear",
+        "heading_2": "built to last",
+        "subheading": "True to size for every frame, made to order, and honest about it. Not fast fashion. Not greenwashing. Just proper quality.",
+        "button_1_label": "Shop the drop",
+        "button_1_link": "shopify://collections/shop-all",
+        "button_2_label": "The fit standard",
+        "button_2_link": "#fit",
+        "color_scheme": "scheme-1",
+        "padding_top": 84,
+        "padding_bottom": 64
+      }
+    },
+    "marquee": {
+      "type": "usurper-marquee",
+      "blocks": {
+        "l1": {
+          "type": "line",
+          "settings": {
+            "text": "Reject the system."
+          }
+        },
+        "l2": {
+          "type": "line",
+          "settings": {
+            "text": "Take the crown.",
+            "gold": true
+          }
+        },
+        "l3": {
+          "type": "line",
+          "settings": {
+            "text": "Broken by design."
+          }
+        },
+        "l4": {
+          "type": "line",
+          "settings": {
+            "text": "Not inherited. Taken.",
+            "gold": true
+          }
+        },
+        "l5": {
+          "type": "line",
+          "settings": {
+            "text": "One crown. One name. One standard."
+          }
+        }
+      },
+      "block_order": [
+        "l1",
+        "l2",
+        "l3",
+        "l4",
+        "l5"
+      ],
+      "settings": {
+        "speed": 28
+      }
+    },
+    "drop": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Drop <em>01</em>",
+        "heading_size": "h1",
+        "description": "<p>Made to order · ships in 5–9 days</p>",
+        "show_description": true,
+        "description_style": "body",
+        "collection": "shop-all",
+        "products_to_show": 6,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "link",
+        "enable_desktop_slider": false,
+        "swipe_on_mobile": false,
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "padding_top": 84,
+        "padding_bottom": 84
+      }
+    },
+    "fit": {
+      "type": "usurper-fit",
+      "settings": {
+        "eyebrow": "The fit standard",
+        "heading": "True to <em>every</em> frame",
+        "sizes": "S, M, L, XL, 2XL, 3XL, 4XL, 5XL, 7XL",
+        "text": "Regular and tall, true to size. Made for the bodies the industry overlooks, not just the one on the mannequin. The silhouette may be relaxed or oversized, but the labelled size stays true to the published block.",
+        "note": "Every size guide on this site is measured from real samples. A promise only counts when the size guide proves it.",
+        "button_label": "Fit + size guides",
+        "button_link": "shopify://pages/fit-size-guides",
+        "ph_title": "Shot 03 — Range without dilution",
+        "ph_line_1": "Two frames, different builds, same quiet authority",
+        "ph_line_2": "4:5 · 1600×2000 · street level, candid movement"
+      }
+    },
+    "values": {
+      "type": "usurper-values",
+      "blocks": {
+        "v1": {
+          "type": "value",
+          "settings": {
+            "title": "Broken by design",
+            "text": "The crown is damaged, rebuilt and taken, not handed down. We find strength in what survives, not in what looks flawless."
+          }
+        },
+        "v2": {
+          "type": "value",
+          "settings": {
+            "title": "Proper quality, no shortcuts",
+            "text": "The cloth has to earn its place. We source the best we can find, wherever it is made, and build it to last."
+          }
+        },
+        "v3": {
+          "type": "value",
+          "settings": {
+            "title": "Built to be kept",
+            "text": "A handful of pieces, worn for years. The opposite of disposable. Buy less, buy better."
+          }
+        },
+        "v4": {
+          "type": "value",
+          "settings": {
+            "title": "True to every frame",
+            "text": "Regular and tall, true to size. Made for the bodies the industry overlooks, not just the one on the mannequin."
+          }
+        },
+        "v5": {
+          "type": "value",
+          "settings": {
+            "title": "Made, not overmade",
+            "text": "Made to order. No overproduction, no waste, no filler. We make what is wanted."
+          }
+        },
+        "v6": {
+          "type": "value",
+          "settings": {
+            "title": "Honesty over hype",
+            "text": "No greenwashing, no empty claims. Quality you can feel, not a story you are sold."
+          }
+        }
+      },
+      "block_order": [
+        "v1",
+        "v2",
+        "v3",
+        "v4",
+        "v5",
+        "v6"
+      ],
+      "settings": {
+        "heading": "How we <em>behave</em>",
+        "aside": "Six values. No filler.",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "signup": {
+      "type": "newsletter",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Take the crown",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Fleece, long sleeves and the women's range land next. No spam, no hype cycles, just a message when it's real.</p>"
+          }
+        },
+        "form": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "form"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 84,
+        "padding_bottom": 96
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "marquee",
+    "drop",
+    "fit",
+    "values",
+    "signup"
+  ]
+}

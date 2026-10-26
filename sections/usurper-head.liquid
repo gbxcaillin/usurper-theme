@@ -1,0 +1,23 @@
+{%- comment -%}
+  Usurper brand loader. Lives first in the header group so Dawn's layout/theme.liquid stays stock
+  (and upgradeable). Loads the brand stylesheet, the reveal script, IBM Plex Mono, and a favicon fallback.
+{%- endcomment -%}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+{{ 'usurper.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'usurper.js' | asset_url }}" defer="defer"></script>
+{%- if settings.favicon == blank -%}
+  <link rel="icon" type="image/png" href="{{ 'usurper-favicon.png' | asset_url }}">
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Usurper brand loader",
+  "class": "u-head",
+  "settings": [
+    { "type": "paragraph", "content": "Loads the Usurper stylesheet, fonts and scripts. Keep this section first in the header group." }
+  ],
+  "enabled_on": { "groups": ["header"] }
+}
+{% endschema %}

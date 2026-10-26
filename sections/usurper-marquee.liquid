@@ -1,0 +1,50 @@
+{%- comment -%} Usurper marquee: looping brand lines, gold accents {%- endcomment -%}
+{%- style -%}
+  .u-marquee{ border-top:1px solid var(--u-steel); border-bottom:1px solid var(--u-steel); background:var(--u-charcoal); overflow:hidden; padding:1.6rem 0; }
+  .u-marquee__track{ display:flex; gap:6.4rem; white-space:nowrap; width:max-content; animation:u-slide {{ section.settings.speed }}s linear infinite; }
+  .u-marquee__track span{ font-family:var(--u-display); font-size:2.2rem; text-transform:uppercase; color:var(--u-steel); letter-spacing:.04em; }
+  .u-marquee__track span.gold{ color:var(--u-gold); }
+  @keyframes u-slide{ to{ transform:translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce){ .u-marquee__track{ animation:none; } }
+{%- endstyle -%}
+
+<div class="u-marquee" aria-hidden="true">
+  <div class="u-marquee__track">
+    {%- for i in (1..2) -%}
+      {%- for block in section.blocks -%}
+        <span class="{% if block.settings.gold %}gold{% endif %}" {{ block.shopify_attributes }}>{{ block.settings.text }}</span>
+      {%- endfor -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Usurper marquee",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "range", "id": "speed", "min": 10, "max": 60, "step": 2, "unit": "s", "label": "Loop duration", "default": 28 }
+  ],
+  "blocks": [
+    {
+      "type": "line",
+      "name": "Line",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "Take the crown." },
+        { "type": "checkbox", "id": "gold", "label": "Gold", "default": false }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Usurper marquee",
+    "blocks": [
+      { "type": "line", "settings": { "text": "Reject the system." } },
+      { "type": "line", "settings": { "text": "Take the crown.", "gold": true } },
+      { "type": "line", "settings": { "text": "Broken by design." } },
+      { "type": "line", "settings": { "text": "Not inherited. Taken.", "gold": true } },
+      { "type": "line", "settings": { "text": "One crown. One name. One standard." } }
+    ]
+  }]
+}
+{% endschema %}

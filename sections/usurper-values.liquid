@@ -1,0 +1,62 @@
+{%- comment -%} Usurper values: numbered grid {%- endcomment -%}
+{%- style -%}
+  .u-vals{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.8rem; }
+  .u-val{ border:1px solid var(--u-steel); padding:3rem 2.6rem; background:var(--u-abyss); }
+  .u-val .u-mono{ display:block; margin-bottom:1.6rem; color:var(--u-gilt); }
+  .u-val h3{ font-size:2.4rem; margin:0 0 1.2rem; }
+  .u-val p{ color:var(--u-mut); font-size:1.35rem; margin:0; }
+  @media (max-width:900px){ .u-vals{ grid-template-columns:1fr; } }
+  @media (max-width:749px){ .u-val{ padding:2.2rem 1.8rem; } }
+{%- endstyle -%}
+
+<section class="u-sec color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width">
+    <div class="u-sec__head u-rev">
+      <h2>{{ section.settings.heading }}</h2>
+      {%- if section.settings.aside != blank -%}<span class="u-mono">{{ section.settings.aside }}</span>{%- endif -%}
+    </div>
+    <div class="u-vals">
+      {%- for block in section.blocks -%}
+        <div class="u-val u-rev" {{ block.shopify_attributes }}>
+          <span class="u-mono">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Usurper values",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "How we <em>behave</em>" },
+    { "type": "text", "id": "aside", "label": "Aside", "default": "Six values. No filler." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" }
+  ],
+  "blocks": [
+    {
+      "type": "value",
+      "name": "Value",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Broken by design" },
+        { "type": "textarea", "id": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Usurper values",
+    "blocks": [
+      { "type": "value", "settings": { "title": "Broken by design", "text": "The crown is damaged, rebuilt and taken, not handed down. We find strength in what survives, not in what looks flawless." } },
+      { "type": "value", "settings": { "title": "Proper quality, no shortcuts", "text": "The cloth has to earn its place. We source the best we can find, wherever it is made, and build it to last." } },
+      { "type": "value", "settings": { "title": "Built to be kept", "text": "A handful of pieces, worn for years. The opposite of disposable. Buy less, buy better." } },
+      { "type": "value", "settings": { "title": "True to every frame", "text": "Regular and tall, true to size. Made for the bodies the industry overlooks, not just the one on the mannequin." } },
+      { "type": "value", "settings": { "title": "Made, not overmade", "text": "Made to order. No overproduction, no waste, no filler. We make what is wanted." } },
+      { "type": "value", "settings": { "title": "Honesty over hype", "text": "No greenwashing, no empty claims. Quality you can feel, not a story you are sold." } }
+    ]
+  }]
+}
+{% endschema %}

@@ -1,0 +1,22 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "usurper-footer",
+      "blocks": {
+        "shop": { "type": "menu", "settings": { "heading": "Shop", "menu": "main-menu" } },
+        "rules": { "type": "menu", "settings": { "heading": "House rules", "menu": "house-rules" } }
+      },
+      "block_order": ["shop", "rules"],
+      "settings": {
+        "text": "Heavyweight streetwear built to last. True to size for every frame, made to order, and honest about it.",
+        "copyright": "© Usurper · Melbourne, Australia",
+        "tagline": "Buy less. Buy better.",
+        "show_policies": true,
+        "show_payment": true
+      }
+    }
+  },
+  "order": ["footer"]
+}

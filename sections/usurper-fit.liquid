@@ -1,0 +1,68 @@
+{%- comment -%} Usurper fit standard: size range, copy, image {%- endcomment -%}
+{%- style -%}
+  .u-fit{ background:var(--u-charcoal); border-top:1px solid var(--u-steel); border-bottom:1px solid var(--u-steel); padding:8.4rem 0; }
+  .u-fit__grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:5.6rem; align-items:center; }
+  .u-fit h2{ font-size:clamp(3rem,4.6vw,5rem); margin:0; }
+  .u-fit .u-mono{ display:block; margin-bottom:1.4rem; }
+  .u-fit__sizes{ display:flex; flex-wrap:wrap; gap:1rem; margin:2.6rem 0; }
+  .u-fit__sizes span{ font-family:var(--u-display); font-size:2.6rem; color:var(--u-gold); border:1px solid var(--u-gilt); padding:1rem 1.6rem; line-height:1; }
+  .u-fit p{ color:var(--u-mut); margin:0 0 1.2rem; }
+  .u-fit__note{ margin-top:2.2rem !important; padding-left:1.6rem; border-left:2px solid var(--u-gold); font-size:1.35rem; }
+  .u-fit__cta{ margin-top:2.8rem; }
+  @media (max-width:900px){ .u-fit__grid{ grid-template-columns:1fr; gap:3.6rem; } }
+  @media (max-width:749px){ .u-fit{ padding:6.4rem 0; } }
+{%- endstyle -%}
+
+<section class="u-fit" id="fit">
+  <div class="page-width u-fit__grid">
+    <div class="u-rev">
+      <span class="u-mono u-mono--gold">{{ section.settings.eyebrow }}</span>
+      <h2>{{ section.settings.heading }}</h2>
+      {%- if section.settings.sizes != blank -%}
+        <div class="u-fit__sizes" aria-label="Size range">
+          {%- assign sizes = section.settings.sizes | split: ',' -%}
+          {%- for s in sizes -%}<span>{{ s | strip }}</span>{%- endfor -%}
+        </div>
+      {%- endif -%}
+      <p>{{ section.settings.text }}</p>
+      {%- if section.settings.note != blank -%}
+        <p class="u-fit__note">{{ section.settings.note }}</p>
+      {%- endif -%}
+      {%- if section.settings.button_label != blank -%}
+        <div class="u-fit__cta"><a class="button button--secondary" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a></div>
+      {%- endif -%}
+    </div>
+    <div class="u-ph u-ph--45 u-rev{% if section.settings.image != blank %} has-image{% endif %}">
+      {%- if section.settings.image != blank -%}
+        {{ section.settings.image | image_url: width: 1600 | image_tag: loading: 'lazy', widths: '600, 900, 1200, 1600', sizes: '(max-width: 900px) 100vw, 45vw', alt: section.settings.image.alt | default: section.settings.heading }}
+      {%- endif -%}
+      <div class="u-ph__tag">
+        <span class="u-mono u-mono--gold">{{ section.settings.ph_title }}</span>
+        <span class="u-mono">{{ section.settings.ph_line_1 }}</span>
+        <span class="u-mono">{{ section.settings.ph_line_2 }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Usurper fit standard",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The fit standard" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "True to <em>every</em> frame" },
+    { "type": "text", "id": "sizes", "label": "Sizes (comma separated)", "default": "S, M, L, XL, 2XL, 3XL, 4XL, 5XL, 7XL" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Regular and tall, true to size. Made for the bodies the industry overlooks, not just the one on the mannequin. The silhouette may be relaxed or oversized, but the labelled size stays true to the published block." },
+    { "type": "textarea", "id": "note", "label": "Pull quote", "default": "Every size guide on this site is measured from real samples. A promise only counts when the size guide proves it." },
+    { "type": "text", "id": "button_label", "label": "Button", "default": "Fit + size guides" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "image_picker", "id": "image", "label": "Image (4:5)" },
+    { "type": "text", "id": "ph_title", "label": "Placeholder title", "default": "Shot 03 — Range without dilution" },
+    { "type": "text", "id": "ph_line_1", "label": "Placeholder line 1", "default": "Two frames, different builds, same quiet authority" },
+    { "type": "text", "id": "ph_line_2", "label": "Placeholder line 2", "default": "4:5 · 1600×2000 · street level, candid movement" }
+  ],
+  "presets": [{ "name": "Usurper fit standard" }]
+}
+{% endschema %}

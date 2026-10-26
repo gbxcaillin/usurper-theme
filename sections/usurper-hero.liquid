@@ -1,0 +1,102 @@
+{%- comment -%} Usurper hero: logo, two-slab headline, fracture line, sub, CTAs, campaign duo {%- endcomment -%}
+{%- style -%}
+  .u-hero{ padding:{{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px; text-align:center; position:relative; overflow:hidden; }
+  .u-hero__logo{ width:min(34rem,72vw); margin:0 auto 4rem; display:block; height:auto; }
+  .u-hero h1{ font-size:clamp(4.4rem,8.4vw,10.4rem); margin:0; color:var(--u-bone); }
+  .u-hero h1 .slab{ display:block; }
+  .u-hero h1 .slab--shift{ transform:translateX(.06em); color:var(--u-gold); }
+  .u-hero__fracture{
+    width:min(56rem,80vw); height:1px; margin:3rem auto;
+    background:linear-gradient(90deg,transparent,var(--u-gold) 18%,var(--u-gold) 55%,transparent 58%,transparent 61%,var(--u-gold) 64%,var(--u-gold) 82%,transparent);
+  }
+  .u-hero__sub{ max-width:52rem; margin:0 auto 3.6rem; color:var(--u-mut); font-size:1.5rem; }
+  .u-hero__cta{ display:flex; gap:1.4rem; justify-content:center; flex-wrap:wrap; }
+  .u-hero__duo{ display:grid; grid-template-columns:1fr 1fr; gap:1.8rem; margin-top:5.6rem; }
+  @media (max-width:640px){
+    .u-hero{ padding:6.4rem 0 5.2rem; }
+    .u-hero__duo{ grid-template-columns:1fr; }
+  }
+{%- endstyle -%}
+
+<section class="u-hero color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width">
+    {%- if section.settings.logo != blank -%}
+      {{ section.settings.logo | image_url: width: 900 | image_tag: class: 'u-hero__logo', alt: shop.name, loading: 'eager', fetchpriority: 'high', widths: '340, 680, 900' }}
+    {%- else -%}
+      <div class="u-wordmark" style="margin-bottom:4rem;">
+        <img src="{{ 'usurper-crown.webp' | asset_url }}" alt="{{ shop.name }} crown mark" width="200" height="192" loading="eager">
+        <span>{{ shop.name }}</span>
+      </div>
+    {%- endif -%}
+
+    <h1>
+      <span class="slab">{{ section.settings.heading_1 }}</span>
+      <span class="slab slab--shift">{{ section.settings.heading_2 }}</span>
+    </h1>
+    <div class="u-hero__fracture" aria-hidden="true"></div>
+    {%- if section.settings.subheading != blank -%}
+      <p class="u-hero__sub">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+
+    <div class="u-hero__cta">
+      {%- if section.settings.button_1_label != blank -%}
+        <a class="button button--primary" href="{{ section.settings.button_1_link }}">{{ section.settings.button_1_label }}</a>
+      {%- endif -%}
+      {%- if section.settings.button_2_label != blank -%}
+        <a class="button button--secondary" href="{{ section.settings.button_2_link }}">{{ section.settings.button_2_label }}</a>
+      {%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="u-hero__duo">
+        {%- for block in section.blocks -%}
+          <div class="u-ph u-ph--45 u-rev{% if block.settings.image != blank %} has-image{% endif %}" {{ block.shopify_attributes }}>
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 1600 | image_tag: loading: 'lazy', widths: '600, 900, 1200, 1600', sizes: '(max-width: 640px) 100vw, 50vw', alt: block.settings.image.alt | default: block.settings.title }}
+            {%- endif -%}
+            <div class="u-ph__tag">
+              <span class="u-mono u-mono--gold">{{ block.settings.title }}</span>
+              {%- if block.settings.line_1 != blank -%}<span class="u-mono">{{ block.settings.line_1 }}</span>{%- endif -%}
+              {%- if block.settings.line_2 != blank -%}<span class="u-mono">{{ block.settings.line_2 }}</span>{%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Usurper hero",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Combo logo (crown + wordmark)", "info": "Upload usurper-combo.webp. Until set, the crown mark and a text wordmark are shown." },
+    { "type": "text", "id": "heading_1", "label": "Headline line 1", "default": "Heavyweight streetwear" },
+    { "type": "text", "id": "heading_2", "label": "Headline line 2 (gold)", "default": "built to last" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "True to size for every frame, made to order, and honest about it. Not fast fashion. Not greenwashing. Just proper quality." },
+    { "type": "text", "id": "button_1_label", "label": "Primary button", "default": "Shop the drop" },
+    { "type": "url", "id": "button_1_link", "label": "Primary link" },
+    { "type": "text", "id": "button_2_label", "label": "Secondary button", "default": "The fit standard" },
+    { "type": "url", "id": "button_2_link", "label": "Secondary link" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding top", "default": 84 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding bottom", "default": 64 }
+  ],
+  "blocks": [
+    {
+      "type": "shot",
+      "name": "Campaign image",
+      "limit": 2,
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image (4:5, 1600x2000)" },
+        { "type": "text", "id": "title", "label": "Placeholder title", "default": "Shot 01" },
+        { "type": "text", "id": "line_1", "label": "Placeholder line 1" },
+        { "type": "text", "id": "line_2", "label": "Placeholder line 2" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Usurper hero" }]
+}
+{% endschema %}
