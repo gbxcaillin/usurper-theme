@@ -93,7 +93,7 @@
         "show_description": false,
         "description_style": "body",
         "collection": "shop-all",
-        "products_to_show": 6,
+        "products_to_show": 9,
         "columns_desktop": 3,
         "color_scheme": "scheme-1",
         "full_width": false,
