@@ -90,7 +90,7 @@
         "title": "Drop <em>01</em>",
         "heading_size": "h1",
         "description": "<p>Made to order · ships in 5–9 days</p>",
-        "show_description": true,
+        "show_description": false,
         "description_style": "body",
         "collection": "shop-all",
         "products_to_show": 6,
@@ -200,7 +200,7 @@
         "text": {
           "type": "paragraph",
           "settings": {
-            "paragraph": "<p>Fleece, long sleeves and the women's range land next. No spam, no hype cycles, just a message when it's real.</p>"
+            "text": "<p>Fleece, long sleeves and the women's range land next. No spam, no hype cycles, just a message when it's real.</p>"
           }
         },
         "form": {

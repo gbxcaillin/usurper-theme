@@ -6,7 +6,7 @@
   .u-hero h1 .slab{ display:block; }
   .u-hero h1 .slab--shift{ transform:translateX(.06em); color:var(--u-gold); }
   .u-hero__fracture{
-    width:min(56rem,80vw); height:1px; margin:3rem auto;
+    display:block; border:0; width:min(56rem,80vw); height:1px; margin:3rem auto;
     background:linear-gradient(90deg,transparent,var(--u-gold) 18%,var(--u-gold) 55%,transparent 58%,transparent 61%,var(--u-gold) 64%,var(--u-gold) 82%,transparent);
   }
   .u-hero__sub{ max-width:52rem; margin:0 auto 3.6rem; color:var(--u-mut); font-size:1.5rem; }
@@ -33,7 +33,7 @@
       <span class="slab">{{ section.settings.heading_1 }}</span>
       <span class="slab slab--shift">{{ section.settings.heading_2 }}</span>
     </h1>
-    <div class="u-hero__fracture" aria-hidden="true"></div>
+    <hr class="u-hero__fracture" aria-hidden="true">
     {%- if section.settings.subheading != blank -%}
       <p class="u-hero__sub">{{ section.settings.subheading }}</p>
     {%- endif -%}
