@@ -230,7 +230,7 @@ h1 em,h2 em,h3 em,.h0 em,.h1 em,.h2 em{ font-style:normal; color:var(--u-gold); 
 .facet-filters__sort{ background:var(--u-abyss); color:var(--u-bone); }
 
 /* ---------- product page ---------- */
-.product__title h1{ font-size:clamp(3.4rem,5.4vw,6.4rem); }
+.product__title h1{ font-size:clamp(3rem,4.2vw,4.8rem); }
 .product__text{ font-family:var(--u-mono); font-size:1.05rem; letter-spacing:.14em; text-transform:uppercase; color:var(--u-gilt); }
 .product__info-container .price{ font-size:1.8rem; }
 .product__description, .product__description p, .product__description li{ color:var(--u-mut); }
@@ -241,7 +241,7 @@ h1 em,h2 em,h3 em,.h0 em,.h1 em,.h2 em{ font-style:normal; color:var(--u-gold); 
   background:var(--u-abyss); color:var(--u-bone);
   border:1px solid var(--u-steel) !important; box-shadow:none !important;
 }
-.product-form__input input[type=radio]:checked+label{ background:var(--u-gold); color:var(--u-abyss); border-color:var(--u-gold) !important; }
+.product-form__input input[type=radio]:checked+label{ background:var(--u-gold) !important; color:var(--u-abyss) !important; border-color:var(--u-gold) !important; }
 .product-form__input input[type=radio]:hover+label{ border-color:var(--u-gilt) !important; }
 .product-form__input input[type=radio]:disabled+label{ border-color:var(--u-steel) !important; color:var(--u-steel); text-decoration:line-through; }
 .quantity{ background:var(--u-charcoal); color:var(--u-bone); border:1px solid var(--u-steel); }
