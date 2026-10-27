@@ -2,7 +2,7 @@
 {%- style -%}
   .u-marquee{ border-top:1px solid var(--u-steel); border-bottom:1px solid var(--u-steel); background:var(--u-charcoal); overflow:hidden; padding:1.6rem 0; }
   .u-marquee__track{ display:flex; gap:6.4rem; white-space:nowrap; width:max-content; animation:u-slide {{ section.settings.speed }}s linear infinite; }
-  .u-marquee__track span{ font-family:var(--u-display); font-size:2.2rem; text-transform:uppercase; color:var(--u-steel); letter-spacing:.04em; }
+  .u-marquee__track span{ font-family:var(--u-display); font-size:2.2rem; text-transform:uppercase; color:var(--u-mut); letter-spacing:.04em; }
   .u-marquee__track span.gold{ color:var(--u-gold); }
   @keyframes u-slide{ to{ transform:translateX(-50%); } }
   @media (prefers-reduced-motion: reduce){ .u-marquee__track{ animation:none; } }

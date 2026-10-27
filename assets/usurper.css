@@ -62,6 +62,11 @@ h1 em,h2 em,h3 em,.h0 em,.h1 em,.h2 em{ font-style:normal; color:var(--u-gold); 
   color:var(--u-gilt);
 }
 .utility-bar--bottom-border{ border-bottom:1px solid var(--u-steel); }
+/* Phones: swap the long announcement for a short one (Dawn escapes the setting, so this is CSS-only) */
+@media (max-width:749px){
+  .announcement-bar__message > span{ font-size:0; }
+  .announcement-bar__message > span::after{ content:"Made to order \00b7 S\2013 7XL \00b7 AUD"; font-size:.95rem; letter-spacing:.14em; }
+}
 
 /* ---------- header ---------- */
 .header-wrapper{
@@ -159,7 +164,7 @@ h1 em,h2 em,h3 em,.h0 em,.h1 em,.h2 em{ font-style:normal; color:var(--u-gold); 
   transition:border-color .25s;
 }
 .card--standard>.card__content, .card .card__inner{ background:transparent; }
-.card-wrapper:hover .card{ border-color:var(--u-gilt); }
+@media (hover:hover){ .card-wrapper:hover .card{ border-color:var(--u-gilt); } }
 .card .card__inner{ border-bottom:1px solid var(--u-steel); }
 .card__content{ padding:1.8rem 1.8rem 2rem; }
 .card__heading, .card__heading a{
@@ -170,7 +175,7 @@ h1 em,h2 em,h3 em,.h0 em,.h1 em,.h2 em{ font-style:normal; color:var(--u-gold); 
   text-transform:uppercase;
   color:var(--u-bone);
 }
-.card__heading a:hover{ color:var(--u-gold); text-decoration:none; }
+@media (hover:hover){ .card__heading a:hover{ color:var(--u-gold); text-decoration:none; } }
 .card-information .caption-with-letter-spacing{ color:var(--u-mut); }
 .price, .price__regular, .price-item{
   font-family:var(--u-mono);
